@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Modal Component</title>
+	<link rel="stylesheet" href="./css/modal.css" type="text/css">
+</head>
+
+<body>
+	<script type="text/javascript" src="./js/modal.js"></script>
+
+	<button id="clickMe1" class="clickMe-button" type="button">Default Modal</button>
+	<button id="clickMe2" class="clickMe-button" type="button">Small Modal</button>
+	<button id="clickMe3" class="clickMe-button" type="button">No Amin Default Modal</button>
+	<button id="clickMe4" class="clickMe-button" type="button">Launch Yes No Modal</button>
+	<button id="clickMe5" class="clickMe-button" type="button">Launch Input Modal </button>
+
+<script type="text/javascript">
+	// First button
+	var myModal = new Modal({});
+	var clickMe1Button = document.getElementById('clickMe1');
+	clickMe1Button.addEventListener('click', function() {
+	  myModal.open();
+	});
+	
+	// Second button
+	var myContent = "This is a test!";
+	var myModal1 = new Modal({
+  		message: myContent,
+  		maxWidth:300,
+	});
+	var clickMe2Button = document.getElementById('clickMe2');
+	clickMe2Button.addEventListener('click', function() {
+	  myModal1.open();
+	});
+
+	// Third button
+	var myContent = "No Animations Here";
+	var myModal2 = new Modal({
+  		message: myContent,
+  		className:""
+	});
+	var clickMe3Button = document.getElementById('clickMe3');
+	clickMe3Button.addEventListener('click', function() {
+	  myModal2.open();
+	});
+
+	// Fourth button
+	var myContent = "Cancel or Save?";
+	var myModal3 = new Modal({
+  		modalType:"YesNoModal",
+  		message: myContent
+	});
+	var clickMe4Button = document.getElementById('clickMe4');
+	clickMe4Button.addEventListener('click', function() {
+	  myModal3.open();
+	});
+
+	// Fifth button
+	var myContent = "What is your name?";
+	var myModal4 = new Modal({
+  		modalType:"InputModal",
+  		message: myContent,
+  		yesLabel:"Submit"
+	});
+	var clickMe5Button = document.getElementById('clickMe5');
+	clickMe5Button.addEventListener('click', function() {
+	  myModal4.open();
+	});
+</script>
+
+
+</body>
+</html>
